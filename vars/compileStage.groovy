@@ -1,10 +1,11 @@
 // vars/compileStage.groovy
-def call() {
+def call(String tool = 'mvn') {
     stage('Compile') {
         steps {
-                // You can add logging or error handling here too
-                echo "Running compile step..."
-                sh 'mvn compile'
+            script {
+                echo "Running ${tool} compile..."
+                sh "${tool} compile"
+            }
         }
     }
 }
