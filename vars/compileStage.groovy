@@ -1,7 +1,7 @@
 // vars/compileStage.groovy
-def call(String tool = 'mvn') {
+def call() {
     stage('Compile') {
-                echo "Running ${tool} compile..."
-                sh "${tool} compile"
+                echo "Running  compile..."
+                sh "mvn compile"
     }
 }
